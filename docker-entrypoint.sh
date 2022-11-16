@@ -8,7 +8,7 @@ set -e
 
 # run command if it is not starting with a "-", is not a git subcommand and is an executable in PATH
 if [ "${#}" -gt "0" ] && \
-   [ "${1#-}" == "${1}" ] && \
+   [ "${1#-}" = "${1}" ] && \
    [ ! -x "/usr/libexec/git-core/git-${1}" ] && \
    command -v "${1}" > /dev/null 2>&1 ; then
     exec "${@}"
